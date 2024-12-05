@@ -14,9 +14,10 @@
     "react-scripts": "5.0.1",
     "redux": "^5.0.1",
     "redux-thunk": "^3.1.0",
+    "serve": "^14.2.4",
     "web-vitals": "^2.1.4"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://todo-list-flask-server.onrender.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

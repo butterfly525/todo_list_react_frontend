@@ -1,6 +1,6 @@
 import '../styles/TaskList.css';
 import '../styles/Forms.css';
-import { setIdEditingTaskAction, setTextEditingTaskAction, setUsernameEditingTaskAction  } from '../store/taskReducer';
+import { setIdEditingTaskAction, setTextEditingTaskAction, setUsernameEditingTaskAction } from '../store/taskReducer';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateStatusTask } from '../store/actions';
 import EditTaskForm from './EditTaskForm';
@@ -11,7 +11,7 @@ const TaskList = () => {
     const tasks = useSelector(state => state.task.tasks);
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
     const editingTaskId = useSelector(state => state.task.editingTaskId);
- 
+
 
     function handleEdit(task) {
         dispatch(setIdEditingTaskAction(task.id));
@@ -30,12 +30,12 @@ const TaskList = () => {
                 {Array.isArray(tasks) && tasks.map(task => (
                     <li key={task.id} className={`task-item ${task.completed ? 'completed' : 'not-completed'}`}>
                         <div className="task-header">
-                            <div><span className="task-username">{task.username} </span>
+                            <div className='task-data-username'><span className="task-username">{task.username}&nbsp;</span>
                                 <span className="task-email">({task.email})</span></div>
-                            <div className='status-block'><span className="task-status">{task.completed ? "Завершена" : "Не завершена"}</span>
+                            <div className='task-status-block'><span className="task-status">{task.completed ? "Завершена" : "Не завершена"}</span>
                                 {isAuthenticated && !task.completed && (
-                                    <div>
-                                        <label>Отметить как выполненную </label>
+                                    <div className='task-change-status'>
+                                        <label>Отметить как выполненную&nbsp;</label>
                                         <input
                                             type="checkbox"
                                             onChange={() => handleCheckboxChange(task.id)} />

@@ -1,28 +1,37 @@
-.tasks{
-    height: 95%;
+.tasks {
+    height: 85%;
     display: flex;
     flex-direction: column;
 }
 
 .task-list {
-    list-style-type: none; 
-    padding: 0; 
+    list-style-type: none;
+    padding: 0;
 }
 
-.task-header{
+.task-header {
     display: flex;
     justify-content: space-between;
 }
 
 .task-item {
-    font-size: 18px; 
+    font-size: 18px;
     background-color: #f9f9f9;
-    border: 1px solid #ddd; 
-    border-radius: 4px; 
-    padding: 15px; 
-    margin-bottom: 10px; 
-    display: flex; 
-    flex-direction: column; 
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-item:last-child {
+    margin-bottom: 0;
+}
+
+.task-data-username {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .task-username {
@@ -30,49 +39,53 @@
 }
 
 .task-email {
-    color: #555; 
+    color: #555;
 }
 
 .task-status {
-    font-size: 16px; 
-    color: #aaa; 
-    align-self: flex-end; 
+    font-size: 16px;
+    color: #aaa;
+    align-self: flex-end;
 }
 
 .task-text {
-    font-size: 20px; 
+    font-size: 20px;
 }
 
-.task-block{
-    margin-top: 10px; 
+.task-block {
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
-.edit-btn{
+.edit-btn {
     background-color: #007bff;
-    color: white; 
-    border: none; 
+    color: white;
+    border: none;
     padding: 8px 12px;
-    border-radius: 4px; 
+    border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
 }
 
-.edit-btn:hover{
+.edit-btn:hover {
     background-color: #0056b3;
 }
 
-.status-block{
+.task-status-block {
     display: flex;
     flex-direction: column;
 }
 
-.sort-buttons{
-    margin-bottom: 20px;
+.task-change-status {
+    display: flex;
 }
 
-.sort-buttons button{
+.sort-buttons {
+    margin: 0 5px 5px;
+}
+
+.sort-buttons button {
     font-weight: bold;
-    margin: 0 5px;
+    margin: 5px;
 }

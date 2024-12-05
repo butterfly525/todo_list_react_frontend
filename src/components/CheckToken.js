@@ -7,7 +7,7 @@ const checkTokenValidity = async (dispatch) => {
             return; // Если токена нет, просто выходим из функции
         }
 
-        const response = await fetch('/api/validate-token', {
+        const response = await fetch('https://todo-list-flask-server.onrender.com/api/validate-token', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`

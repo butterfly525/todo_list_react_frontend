@@ -5,7 +5,7 @@ import { loginAction } from './authReducer';
 
 export const loginUser = (formData) => {
     return (dispatch) => {
-        fetch('/api/login', {
+        fetch('https://todo-list-flask-server.onrender.com/api/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -34,7 +34,7 @@ export const loginUser = (formData) => {
 // Функция для получения задач
 export const fetchTasks = (page, sortBy) => {
     return (dispatch) => {
-        fetch(`/api/tasks?page=${page}&sortBy=${sortBy}`)
+        fetch(`https://todo-list-flask-server.onrender.com/api/tasks?page=${page}&sortBy=${sortBy}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Сеть ответила с ошибкой: ' + response.status);
@@ -49,6 +49,7 @@ export const fetchTasks = (page, sortBy) => {
                 }));
             })
             .catch((error) => {
+                console.error(error);
                 dispatch(setNotificationAction({ message: 'Не удалось получить задачи (' + error + ').', type: 'error' }));
             });
     };
@@ -57,7 +58,7 @@ export const fetchTasks = (page, sortBy) => {
 // Функция для добавления новой задачи
 export const addTask = (newTask) => {
     return (dispatch) => {
-        fetch('/api/tasks', {
+        fetch('https://todo-list-flask-server.onrender.com/api/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -83,7 +84,7 @@ export const addTask = (newTask) => {
 // Функция для обновления статуса задачи
 export const updateStatusTask = (taskId) => {
     return (dispatch) => {
-        fetch(`/api/tasks/${taskId}`, {
+        fetch(`https://todo-list-flask-server.onrender.com/api/tasks/${taskId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -109,7 +110,7 @@ export const updateStatusTask = (taskId) => {
 export const updateTextTask = (taskId, newText) => {
 
     return (dispatch) => {
-        fetch(`/api/tasks/${taskId}`, {
+        fetch(`https://todo-list-flask-server.onrender.com/api/tasks/${taskId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
